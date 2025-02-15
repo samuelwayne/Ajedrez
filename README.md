@@ -27,8 +27,9 @@ Un juego de ajedrez creado con Python. Por samuel_wayne y ismola.
 - Elegir tecnología
 - DevContainer
 - [Pintar](https://chessboardjs.com/)
-  > [!WARNING]
-  > ¿Le meto 3D o 2D?
+
+> [!WARNING]
+> ¿Le meto 3D o 2D?
 
 ### Fase 2 Despliegue
 
@@ -39,8 +40,10 @@ Un juego de ajedrez creado con Python. Por samuel_wayne y ismola.
 
 - Dockerizar backend
 - Front en netlify con subdominio.ismola.dev
-  > [!WARNING]
-  > Elegir o dominio o subdominio
+
+> [!WARNING]
+> Elegir o dominio o subdominio
+
 - Backend, en algun servidor(v1) o algún sitio que desplieguen imagenes de docker gratis
 
 ### Fase 3 Multijugador online
