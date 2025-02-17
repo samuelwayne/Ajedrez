@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "Tareas",
-        "Road map"
+        "Road map",
+        "DevContainer"
     ]
 }
