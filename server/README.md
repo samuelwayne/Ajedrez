@@ -32,9 +32,9 @@ Now, the server is accessible at `http://localhost3000`
 
 ### First Call
 
-![First Call](../readmeImages/firstcall.png)
+![First Call](https://github.com/Ismola/selenium-scraper-quickstarter/blob/main/readmeImages/firstcall.png?raw=true)
 
-![Auth Call](../readmeImages/authcall.png)
+![Auth Call](https://github.com/Ismola/selenium-scraper-quickstarter/blob/main/readmeImages/authcall.png?raw=true)
 
 ### Make your firsts changes
 
