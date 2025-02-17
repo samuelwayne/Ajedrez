@@ -25,7 +25,7 @@ Un juego de ajedrez creado con Python. Por samuel_wayne y ismola.
 #### Isma - Frontend
 
 - Elegir tecnología
-- DevContainer
+- ✅ DevContainers
 - [Pintar](https://chessboardjs.com/)
 
 > [!WARNING]
