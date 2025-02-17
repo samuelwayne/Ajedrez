@@ -32,9 +32,9 @@ Now, the server is accessible at `http://localhost3000`
 
 ### First Call
 
-![First Call](./readmeImages/firstcall.png)
+![First Call](../readmeImages/firstcall.png)
 
-![Auth Call](./readmeImages/authcall.png)
+![Auth Call](../readmeImages/authcall.png)
 
 ### Make your firsts changes
 
