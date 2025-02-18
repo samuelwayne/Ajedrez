@@ -3,10 +3,38 @@ col = 'abcdefgh'
 row = '12345678'
 
 # Creamos un tablero
+class Square():
+    
+    def __init__(self, position, occupied=False):
+        """Objet square
+
+        Args:
+            position (tuple): (x, y) as indexing coordinates
+            occupied (bool, optional): Piece occupying. Defaults to False for free squares.
+        """
+        self.position = position
+        self.occupied = occupied
+
 class Board:
         
-    def __init__(self):
-        self.board_squares = [[None for _ in range(8)] for _ in range(8)]
+    def __init__(self, size=(8, 8)):
+        """Board object
+
+        Args:
+            size (tuple, optional): Length, width of the board created. Defaults to (8, 8), common chess board.
+        """
+        self.size = size
+        #board creation
+        position_coordinates = [[(x, y) for y in range(self.size[1])] for x in range(self.size[0])]
+        self.list_position_coordinates = []
+        [self.list_position_coordinates.extend(element) for element in position_coordinates]
+        position_names = [[col[x]+str(y+1) for y in range(self.size[1])] for x in range(self.size[0])]
+        self.list_position_names = []
+        [self.list_position_names.extend(element) for element in position_names]
+       
+    def create_new_board (self):
+        self.board = dict(map(lambda x, y: (x, y), self.list_position_names, self.list_position_coordinates))
+        return self.board
 
 # Creamos las piezas
 class Piece:
@@ -41,4 +69,6 @@ class Rook(Piece):
               
 
 Ra1 = Rook("w", "a1")
-Ra1.move()
+board = Board()
+board.create_new_board()
+print(board.board)
