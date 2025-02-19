@@ -1,6 +1,5 @@
 from flask import Flask
 from flask import request
-from ideas import piece
 
 # Crear una instancia de la aplicación Flask
 app = Flask(__name__)
@@ -8,7 +7,6 @@ app = Flask(__name__)
 # Ruta principal
 @app.route('/')
 def hello_world():
-    piece()
     data = request.json
     print(data)
 
