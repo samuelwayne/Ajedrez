@@ -24,13 +24,13 @@ class Board:
         self.list_position_names = []
         [self.list_position_names.extend(element) for element in position_names]
 
-    #creating occupied state as false by default
-        empty = True
-        self.list_empty_state = [empty for _ in range(self.size[0]*self.size[1])]
+    #creating occupied state as False by default
+        occupied = False
+        self.list_occupied_state = [occupied for _ in range(self.size[0]*self.size[1])]
        
     def create_new_board (self):
         #everything into a dictionary
-        self.board = dict(map(lambda x, y, z: (x, [y, z]), self.list_position_coordinates, self.list_position_names, self.list_empty_state))
+        self.board = dict(map(lambda x, y, z: (x, [y, z]), self.list_position_coordinates, self.list_position_names, self.list_occupied_state))
         return self.board
 
 
@@ -46,7 +46,7 @@ class Piece:
         """
         self.color = color
         self.position = col.index(shown_position[0]), row.index(shown_position[1])
-        board.board[self.position][1] = False
+        board.board[self.position][1] = color
 
     def moves_allow(self, board):
         #We define the current self.position and board.size by spliting x and y components,
@@ -56,31 +56,45 @@ class Piece:
         list_moves_allow = []
         if "horizontal" in self.move_type:
             for x in range(x_piece-1, -1, -1):
-                #Adding squares allowed compared within the row in which we have the piece
-                if board.board[(x, y_piece)][1] == True:
+                #Adding squares allowed compared within the ROW in which we have the piece in one direction
+                #Also checked if the piece is black or white to know if it can either be eaten or unoccupied
+                if board.board[(x, y_piece)][1] == self.color:
+                    break
+                elif board.board[(x, y_piece)][1] == False:
                     list_moves_allow.append((x, y_piece))
                 else:
+                    list_moves_allow.append((x, y_piece))
                     break
             for x in range(x_piece+1, x_size):
-                #Adding squares allowed compared within the row in which we have the piece
-                #We skip the current position
-                if board.board[(x, y_piece)][1] == True:
+                #Adding squares allowed compared within the ROW in which we have the piece in the other direction
+                #Also checked if the piece is black or white to know if it can either be eaten or unoccupied
+                if board.board[(x, y_piece)][1] == self.color:
+                    break
+                elif board.board[(x, y_piece)][1] == False:
                     list_moves_allow.append((x, y_piece))
                 else:
+                    list_moves_allow.append((x, y_piece))
                     break
             for y in range(y_piece-1, -1, -1):
-                #Adding squares allowed compared within the row in which we have the piece
-                if board.board[(x_piece, y)][1] == True:
+                #Adding squares allowed compared within the COLUMN in which we have the piece in one direction
+                #Also checked if the piece is black or white to know if it can either be eaten or unoccupied
+                if board.board[(x_piece, y)][1] == self.color:
+                    break
+                elif board.board[(x_piece, y)][1] == False:
                     list_moves_allow.append((x_piece, y))
                 else:
+                    list_moves_allow.append((x_piece, y))
                     break
-            for y in range(y_piece+1, x_size):
-                #Adding squares allowed compared within the row in which we have the piece
-                #We skip the current position
-                if board.board[(x_piece, y)][1] == True:
+            for y in range(y_piece+1, y_size):
+                #Adding squares allowed compared within the COLUMN in which we have the piece in the other direction
+                #Also checked if the piece is black or white to know if it can either be eaten or unoccupied
+                if board.board[(x_piece, y)][1] == self.color:
+                    break
+                elif board.board[(x_piece, y)][1] == False:
                     list_moves_allow.append((x_piece, y))
                 else:
-                    break
+                    list_moves_allow.append((x_piece, y))
+
         return list_moves_allow
                 
 
@@ -102,7 +116,10 @@ board1 = Board()
 board1.create_new_board()
 R1 = Rook("w", "b2", board1)
 R2 = Rook("w", "b5", board1)
+R3 = Rook("b", "c2", board1)
 print(R1.position)
 print(R2.position)
+print(R3.position)
+print(R1.moves_allow(board1))
 print(R2.moves_allow(board1))
-
+print(R3.moves_allow(board1))
