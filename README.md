@@ -5,6 +5,7 @@ Backend del juego de ajedrez creado por  [@samuelwayne](https://github.com/samue
 
 > [!NOTE]
 > Proyecto padre: https://github.com/Ismola/chess_game_app
+>
 > Web: https://chessgame.ismola.dev/
 
 
