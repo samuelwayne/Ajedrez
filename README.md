@@ -2,7 +2,12 @@
 
 Backend del juego de ajedrez creado por  [@samuelwayne](https://github.com/samuelwayne) e [@ismola](https://github.com/Ismola)
 
-Proyecto padre: https://github.com/Ismola/chess_game_app
+
+> [!NOTE]
+> Proyecto padre: https://github.com/Ismola/chess_game_app
+>
+> Web: https://chessgame.ismola.dev/
+
 
 ## Tecnologías
 * Python
@@ -45,7 +50,7 @@ Proyecto padre: https://github.com/Ismola/chess_game_app
 #### Isma - Deploy
 
 - Dockerizar backend
-- Front en netlify con subdominio.ismola.dev
+- ✅ Front en netlify con subdominio.ismola.dev
 
 > [!WARNING]
 > Elegir o dominio o subdominio
