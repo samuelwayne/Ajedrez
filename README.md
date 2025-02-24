@@ -50,7 +50,7 @@ Backend del juego de ajedrez creado por  [@samuelwayne](https://github.com/samue
 #### Isma - Deploy
 
 - Dockerizar backend
-- Front en netlify con subdominio.ismola.dev
+- ✅ Front en netlify con subdominio.ismola.dev
 
 > [!WARNING]
 > Elegir o dominio o subdominio
